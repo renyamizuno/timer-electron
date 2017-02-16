@@ -1,8 +1,10 @@
+const path = require('path');
+
 module.exports = {
-  context: __dirname + '/src/js',
+  context: path.resolve(__dirname, 'src'),
   entry: './app.js',
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'app.js'
   },
   module: {
@@ -17,5 +19,9 @@ module.exports = {
         use: ['style-loader', 'css-loader?modules', 'postcss-loader'],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
   },
 }
