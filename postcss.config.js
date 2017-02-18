@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    require('postcss-import'),
+    require('postcss-import')({path: ['src']}),
     require('postcss-apply'),
     require('postcss-nesting'),
     require('postcss-custom-properties'),
