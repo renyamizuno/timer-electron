@@ -1,0 +1,64 @@
+html, body,
+h1, h2, h3, h4, h5, h6,
+p,
+ol, ul, li,
+dl, dt, dd,
+th, td,
+input {
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.0rem;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border-width: 0;
+}
+textarea {
+  appearance: none;
+  border-width: 0;
+}
+input {
+  appearance: none;
+  border-width: 0;
+}
+
+table {
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Roboto', 'Noto Sans Japanese', -apple-system, 'BlinkMacSystemFont', sans-serif;
+  font-size: 14px;
+}
+html, body {
+  background-color: var(--application-background-color);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+body {
+  min-width: 1000px;
+}
+
+p {
+  min-height: 1rem;
+  line-height: 1.5rem;
+}
+
+input, textarea {
+  font-family: 'Roboto', 'Noto Sans Japanese', -apple-system, 'BlinkMacSystemFont', sans-serif;
+}
