@@ -53,9 +53,6 @@ html, body {
   position: absolute;
   width: 100%;
 }
-body {
-  min-width: 1000px;
-}
 
 p {
   min-height: 1rem;
