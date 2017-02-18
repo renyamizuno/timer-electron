@@ -7,4 +7,10 @@
   bottom: 0;
   left: 0;
   background-color: var(--background-color);
+
+  &_actionButtonLayout {
+    position: absolute;
+    right: 80px;
+    bottom: 80px;
+  }
 }
