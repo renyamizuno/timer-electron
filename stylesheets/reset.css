@@ -23,14 +23,17 @@ button {
   appearance: none;
   background: transparent;
   border-width: 0;
+  outline: none;
 }
 textarea {
   appearance: none;
   border-width: 0;
+  outline: none;
 }
 input {
   appearance: none;
   border-width: 0;
+  outline: none;
 }
 
 table {
