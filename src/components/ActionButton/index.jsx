@@ -23,9 +23,7 @@ export default class ActionButton extends React.Component {
     return (
       <button className={style.actionButton} onClick={this.onClick.bind(this)} ref="button">
         ▶
-        <div className={style.mask}>
-          <div className={style.ripple} style={{ left: this.state.x, top: this.state.y }} data-type={repple} onAnimationEnd={this.onAnimationEnd.bind(this)} />
-        </div>
+        <div className={style.ripple} style={{ left: this.state.x, top: this.state.y }} data-type={repple} onAnimationEnd={this.onAnimationEnd.bind(this)} />
       </button>
     );
   }
