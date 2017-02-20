@@ -8,6 +8,13 @@
   left: 0;
   background-color: var(--background-color);
 
+  &_timerLayout {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   &_actionButtonLayout {
     position: absolute;
     right: 40px;
