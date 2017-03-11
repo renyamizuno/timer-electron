@@ -21,10 +21,7 @@
   height: 0;
   transform: translate(-50%, -50%);
   border-radius: 100%;
-
-  &[data-type="clicked"] {
-    animation: ripple-anime .7s ease-out;
-  }
+  animation: ripple-anime .7s ease-out;
 }
 
 @keyframes ripple-anime {

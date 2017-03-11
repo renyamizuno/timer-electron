@@ -1,30 +1,40 @@
 import React from 'react';
+import uuid from 'uuid';
 import style from './action-button.css';
 
 export default class ActionButton extends React.Component {
   constructor(...args) {
     super(...args);
-    this.state = { ripple: false, x: 0, y: 0 };
+    this.state = { repples: []};
   }
 
-  onAnimationEnd() {
-    this.setState({ ripple: false, x: 0, y: 0 });
+  onAnimationEnd(uuid) {
+    const { repples } = this.state
+    this.setState({ repples: repples.filter(ripple => ripple.uuid !== uuid) });
   }
 
   onClick(e) {
+    const { repples } = this.state;
     const button = this.refs.button.getBoundingClientRect();
     const y = e.clientY - button.top;
     const x = e.clientX - button.left;
-    this.setState({ ripple: true, x, y });
+    this.setState({ repples: [ ...repples, { uuid: uuid(), x, y }] });
   }
 
   render() {
-    const repple = this.state.ripple ? 'clicked' : null;
+    const { repples } = this.state;
     return (
       <button className={style.actionButton} onClick={this.onClick.bind(this)} ref="button">
         ▶
-        <div className={style.ripple} style={{ left: this.state.x, top: this.state.y }} data-type={repple} onAnimationEnd={this.onAnimationEnd.bind(this)} />
+        { repples.map( (repple) => (
+          <div
+            key={repple.uuid}
+            className={style.ripple}
+            style={{ left: repple.x, top: repple.y }}
+            onAnimationEnd={this.onAnimationEnd.bind(this, repple.uuid)}
+          />
+        )) }
       </button>
-    );
+    )
   }
 }
