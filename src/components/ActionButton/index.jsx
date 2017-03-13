@@ -8,9 +8,10 @@ export default class ActionButton extends React.Component {
     this.state = { repples: [] };
   }
 
-  onAnimationEnd(uuid) {
+  onAnimationEnd(uuidKey) {
     const { repples } = this.state;
-    this.setState({ repples: repples.filter(ripple => ripple.uuid !== uuid) });
+
+    this.setState({ repples: repples.filter(ripple => ripple.uuid !== uuidKey) });
   }
 
   onClick(e) {
@@ -18,15 +19,17 @@ export default class ActionButton extends React.Component {
     const button = this.refs.button.getBoundingClientRect();
     const y = e.clientY - button.top;
     const x = e.clientX - button.left;
-    this.setState({ repples: [ ...repples, { uuid: uuid(), x, y }] });
+
+    this.setState({ repples: [...repples, { uuid: uuid(), x, y }] });
   }
 
   render() {
     const { repples } = this.state;
+
     return (
       <button className={style.actionButton} onClick={this.onClick.bind(this)} ref="button">
         ▶
-        { repples.map((repple) => (
+        { repples.map(repple => (
           <div
             key={repple.uuid}
             className={style.ripple}
