@@ -5,11 +5,11 @@ import style from './action-button.css';
 export default class ActionButton extends React.Component {
   constructor(...args) {
     super(...args);
-    this.state = { repples: []};
+    this.state = { repples: [] };
   }
 
   onAnimationEnd(uuid) {
-    const { repples } = this.state
+    const { repples } = this.state;
     this.setState({ repples: repples.filter(ripple => ripple.uuid !== uuid) });
   }
 
@@ -26,7 +26,7 @@ export default class ActionButton extends React.Component {
     return (
       <button className={style.actionButton} onClick={this.onClick.bind(this)} ref="button">
         ▶
-        { repples.map( (repple) => (
+        { repples.map((repple) => (
           <div
             key={repple.uuid}
             className={style.ripple}
@@ -35,6 +35,6 @@ export default class ActionButton extends React.Component {
           />
         )) }
       </button>
-    )
+    );
   }
 }

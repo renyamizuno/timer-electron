@@ -31,6 +31,6 @@ export default class Timer extends React.Component {
       <div className={style.oval}>
         <div className={style.time}>{time}</div>
       </div>
-      );
+    );
   }
 }
