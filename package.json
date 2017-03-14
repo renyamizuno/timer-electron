@@ -6,7 +6,8 @@
   "scripts": {
     "electron": "electron .",
     "build:dev": "webpack --config ./webpack.config.js",
-    "eslint": "eslint 'src/**/*.jsx' 'src/**/*.js'"
+    "eslint": "eslint 'src/**/*.jsx' 'src/**/*.js'",
+    "test": "ava"
   },
   "keywords": [],
   "author": "merotan <renyamizuno+js@gmail.com>",
@@ -15,6 +16,7 @@
     "electron-prebuilt": "^1.4.13"
   },
   "devDependencies": {
+    "ava": "^0.18.2",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.4.0",
