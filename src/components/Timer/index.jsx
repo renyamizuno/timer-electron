@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './timer.css';
+import moment from 'moment';
 
 export default class Timer extends React.Component {
   constructor(...args) {
@@ -25,7 +26,7 @@ export default class Timer extends React.Component {
   }
 
   render() {
-    const time = this.state.date.toTimeString().replace(/ .*/, '');
+    const time = moment(this.state.date).format('h:mm:ss');
 
     return (
       <div className={style.oval}>
