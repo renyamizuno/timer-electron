@@ -32,6 +32,7 @@
     "eslint": "^3.17.1",
     "eslint-config-eslint": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "jsdom": "^9.12.0",
     "moment": "^2.17.1",
     "nyc": "^10.1.2",
     "postcss-apply": "^0.6.0",
@@ -44,6 +45,7 @@
     "react": "^15.4.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "sinon": "^2.0.0",
     "style-loader": "^0.13.2",
     "uuid": "^3.0.1",
     "webpack": "^2.2.1"
@@ -51,7 +53,8 @@
   "ava": {
     "babel": "inherit",
     "require": [
-      "babel-register"
+      "babel-register",
+      "./test-helpers/setup.js"
     ],
     "files": [
       "src/**/__tests__/*-test.js"
