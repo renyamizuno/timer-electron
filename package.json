@@ -8,7 +8,8 @@
     "build:dev": "webpack --config ./webpack.config.js",
     "eslint": "eslint 'src/**/*.jsx' 'src/**/*.js'",
     "test": "CONFIG=$(pwd)/webpack.config.test.js BABEL_DISABLE_CACHE=1 NODE_ENV=test ava",
-    "coveralls": "nyc --extension .jsx yarn test && nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc --extension .jsx yarn test",
+    "coveralls": "yarn coverage && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [],
   "author": "merotan <renyamizuno+js@gmail.com>",
