@@ -2,6 +2,8 @@ import React from 'react';
 import style from './timer.css';
 import moment from 'moment';
 
+export { style };
+
 export default class Timer extends React.Component {
   constructor(...args) {
     super(...args);
