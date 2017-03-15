@@ -2,6 +2,7 @@
   "presets": ["latest", "react"],
   "env": {
     "test": {
+      "sourceMaps": "inline",
       "plugins": [
         [
           "babel-plugin-webpack-loaders",
