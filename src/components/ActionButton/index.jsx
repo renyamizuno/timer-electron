@@ -2,7 +2,21 @@ import React from 'react';
 import uuid from 'uuid';
 import style from './action-button.css';
 
+export { style };
+
 export default class ActionButton extends React.Component {
+  static get propTypes() {
+    return {
+      onClick: React.PropTypes.func
+    };
+  }
+
+  static get defaultProps() {
+    return {
+      onClick: () => {}
+    };
+  }
+
   constructor(...args) {
     super(...args);
     this.state = { repples: [] };
@@ -21,6 +35,7 @@ export default class ActionButton extends React.Component {
     const x = e.clientX - button.left;
 
     this.setState({ repples: [...repples, { uuid: uuid(), x, y }] });
+    this.props.onClick(e);
   }
 
   render() {
