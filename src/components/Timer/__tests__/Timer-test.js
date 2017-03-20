@@ -24,3 +24,10 @@ test('Timer update time', t => {
 
   t.not(prevTime, currentTime);
 });
+
+test('Timer can unmount', t => {
+  const wrapper = shallow(<Timer />);
+
+  wrapper.unmount();
+  t.pass();
+});
